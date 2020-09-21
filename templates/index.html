@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Spam Classifier</title>
+</head>
+<body>
+
+    <h1>Email Spam Classfier</h1>
+
+    {% if label %}
+        {% if label == 1 %}
+            <h2 style="color:red">Spam</h2>
+        {% else %}
+            <h2 style="color:green">Not Spam</h2>
+        {% endif %}
+
+    {% endif %}
+
+    <form action="/predict" method="post">
+        <label>Enter Email</label><br>
+        <textarea rows="20" cols="100" name="email"></textarea><br>
+        <input type="submit" value="Predict">
+    </form>
+
+</body>
+</html>
